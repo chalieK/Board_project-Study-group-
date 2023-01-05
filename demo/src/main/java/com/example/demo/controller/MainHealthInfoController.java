@@ -58,6 +58,8 @@ public class MainHealthInfoController {
         return ResponseEntity.ok(healthInfoService.deleteHealth(id));
     }
 
+
+
     //페이징 처리
 //    @GetMapping("/list")
 //    public ResponseEntity<List<HealthInfo>> getPaging(@PageableDefault(size = 10, sort = "id", direction = Sort.Direction

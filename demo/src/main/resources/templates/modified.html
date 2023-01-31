@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>수정 페이지</title>
+</head>
+
+<body>
+    <form th:action="@{/home/modified/update}" method="post">
+        <input name="id" type ="hidden" th:value="${healthInfo.id}">
+        <input name="brand_name" type ="text" th:value="${healthInfo.brand_name}">
+        <input name="category" type ="text" th:value="${healthInfo.category}">
+        <input name="land_number" type ="text" th:value="${healthInfo.land_number}">
+        <input name="road_number" type ="text" th:value="${healthInfo.road_number}">
+        <button type="submit">수정</button>
+        <a th:href="@{/page}">홈으로</a>
+    </form>
+</body>
+</html>

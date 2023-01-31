@@ -15,6 +15,6 @@ public class MainTest {
 
     @Test
     void test(){
-        boardRepository.findAll(PageRequest.of(0,5)).forEach(System.out::println);
+        boardRepository.findAll(PageRequest.of(0,3)).forEach(System.out::println);
     }
 }

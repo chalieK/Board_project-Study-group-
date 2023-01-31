@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 저장 페이지</title>
+</head>
+<!--healthInfo.id를 조회하는데 문제가 있음.-->
+<body>
+<table>
+    <form th:action="@{/review/saver/{id}(id=${healthInfo.id})}" method="post">
+        <p>아래에 자료를 입력하세요.</p>
+        <tr>
+            <td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="contents"></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" name="health_id" value="${healthInfo.id}"></td>
+        </tr>
+        <tr>
+        <td><input type="reset" value="취소"></td>
+        <td><button type="submit">저장</button></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

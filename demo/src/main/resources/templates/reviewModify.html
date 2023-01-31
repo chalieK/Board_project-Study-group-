@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>수정페이지</title>
+</head>
+
+<body>
+<form th:action="@{/review/modified/update}" method="post">
+  <input name="id" type ="hidden" th:value="${review.id}">
+  <input name="title" type ="text" th:value="${review.title}">
+  <input name="contents" type ="text" th:value="${review.contents}">
+  <input name="health_id" type ="hidden" th:value="${review.healthInfo}">
+  <button type="submit">수정</button>
+  <a th:href="@{/home}">홈으로</a>
+</form>
+</body>
+</html>

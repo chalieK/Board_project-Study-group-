@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>헬스장 정보 저장 페이지</title>
+</head>
+
+<body>
+<table>
+    <form th:action="@{/home/save}" method="post">
+        <p>아래에 자료를 입력하세요.</p>
+            <tr>
+                <td><input type="text" name="brand_name"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="category"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="land_number"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="road_number"></td>
+            </tr>
+
+            <td><input type="reset" value="취소"></td>
+            <td><button type="submit">저장</button></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

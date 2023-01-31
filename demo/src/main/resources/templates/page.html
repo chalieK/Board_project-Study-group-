@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>헬스장 정보 페이지</title>
+</head>
+
+<body>
+<table border="1">
+  <thead>
+  <tr>
+    <h1>Homepage</h1>
+  </tr>
+  <button type="submit" onclick="location.href='/save'">글쓰기</button>
+  </thead>
+  <tbody>
+  <tr th:each = "healthInfo:${pages}">
+    <td th:text="${healthInfo.id}"></td>
+    <td>
+      <a th:text="${healthInfo.brand_name}"
+         th:href="@{/home/view(id=${healthInfo.id})}">
+      </a>
+      <a th:href="@{/home/delete(id=${healthInfo.id})}">삭제</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="page-num"
+     th:with="start=${(pages.number/maxPage)*maxPage + 1},
+                  end=(${(pages.totalPages == 0) ? 1 : (start + (maxPage - 1) < pages.totalPages ? start + (maxPage - 1) : pages.totalPages)})">
+  <ul>
+    <li th:if="${start > 1}">
+      <a th:href="@{/page?(page=0)}" th:text="'<<'"></a></li>
+    </li>
+
+    <li th:if="${start > 1}">
+      <a th:href="@{/page?(page=${start - maxPage})}" th:text="'<'"></a>
+    </li>
+
+    <li th:each="page: ${#numbers.sequence(start, end)}">
+      <a th:href="@{/page?(page=${page-1})}" th:text="${page}"></a></li>
+    </li>
+
+    <li th:if="${end < pages.totalPages}">
+      <a th:href="@{/page?(page=${start + maxPage})}" th:text="'>'"></a>
+    </li>
+
+    <li th:if="${end < pages.totalPages}">
+      <a th:href="@{/page?(page=${pages.totalPages-1})}" th:text="'>>'"></a></li>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

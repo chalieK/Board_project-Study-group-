@@ -13,7 +13,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="6d2b8566-f7e3-473d-8382-11757b0dd11b">
-      <console name="Connection" type="STANDARD" schema="board" session="Main"><![CDATA[select * from health_info]]></console>
+      <console name="Connection" type="STANDARD" schema="study" session="Main"><![CDATA[use study;
+select * from health_info;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -21,14 +22,6 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
-  </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="6d2b8566-f7e3-473d-8382-11757b0dd11b" dataset="board.board" active-filter-id="aafe9e05-b28a-49d4-8d32-ca074c09711f">
-      <filter id="aafe9e05-b28a-49d4-8d32-ca074c09711f" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="id" operator="=" value="1" active="true" />
-      </filter>
-    </filter-actions>
-    <filter-actions connection-id="6d2b8566-f7e3-473d-8382-11757b0dd11b" dataset="board.health_info" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
